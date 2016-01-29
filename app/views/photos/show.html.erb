@@ -1,0 +1,10 @@
+<h1>Zdjęcie</h1> 
+<div class="blog-post">
+  <h2 class="blog-post-title"><% file_name =  File.basename(@photo.photo_file_name, File.extname(@photo.photo_file_name)).downcase %><%= file_name.humanize %></h2>
+  <em class="blog-post"><%= @photo.description %></em>
+  <p class="blog-post-meta">Utworzony: <%= @photo.created_at.strftime("%d %B, %Y") %></p>
+</div>
+<div class="img">
+  <%= image_tag @photo.photo.url(:medium) %>
+</div> 
+<br/>

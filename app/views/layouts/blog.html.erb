@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Blog Jozefina</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body> 
+  <div class="blog-masthead">
+    <div class="container">
+      <nav class="blog-nav">
+        <%= link_to "Salon Urody", root_path, class: "blog-nav-item" %>
+        <%= link_to "Artykuły", articles_path, class: "blog-nav-item" %>
+        <% if current_user %>
+        <%= link_to "Zdjęcia", photos_path, class: "blog-nav-item" %>
+        <% end %>
+        <%= link_to "Galerie", galeries_path, class: "blog-nav-item" %>
+      </nav>
+    </div>
+  </div> 
+  <div class="container">
+      <div class="blog-header">
+        <h1 class="blog-title font-blog"><em>Kącik porad Józefiny</em></h1>
+      </div>
+      <br/>
+      <br/>
+      <div class="row">
+        <div class="col-sm-8 blog-main"> 
+          <%= yield %> 
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4><%= link_to 'Artykuły', articles_path %></h4>
+            <div class="sidebar-module">
+              <%= render 'articles/last_article' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= render 'welcome/footer' %>
+  </body>
+</html>

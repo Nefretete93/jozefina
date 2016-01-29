@@ -1,0 +1,14 @@
+<div id="index" class="row">
+
+<% @last_blogs.each do |blog| %>
+
+  <div class="col-lg-4">
+    <%= image_tag 'blog.png', class: "img-circle" %>
+    <h2><%= blog.title %></h2>
+    <p><%= truncate(blog.text, length: 90, omission: '', separator: ' ') %></p>
+    <p><%= link_to "Więcej >>", blog, html_options = { class: "btn btn-default", role: "button" } %></p>
+    
+  </div><!-- /.col-lg-4 -->
+  
+  <%end%>
+</div><!-- /.row -->

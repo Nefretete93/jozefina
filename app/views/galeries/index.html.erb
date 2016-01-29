@@ -1,0 +1,19 @@
+<h2>Galerie</h2> 
+<table class='table table-hover borderless'>
+  <tbody>
+    <tr>
+      <th><% if current_user %>
+          <%= link_to "Nowa galeria", new_galery_path, class: "btn btn-primary" %>
+          <% end %>
+      </th>
+    </tr>
+    <% @galeries.each do |galery| %>
+    <tr>
+      <td><%= link_to galery.name, galery_path(galery) %></td>
+      <% if current_user %>
+        <td><%= link_to 'Usuń', galery_path(galery), method: :delete, class: 'btn btn-primary' %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

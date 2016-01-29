@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jozefina</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class="col-md-12 whole"></div>
+<div class="container marketing">
+
+  <%= yield %>
+
+ <%= render 'galerie' %>
+
+  <%= render 'welcome/footer' %>
+</div>
+</body>
+</html>

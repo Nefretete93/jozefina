@@ -1,0 +1,11 @@
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= @article.title %></h2>
+  <p class="blog-post-meta"><%= @article.created_at.strftime("%d %B, %Y") %></p>
+</div>
+<%= @article.text %>
+<div class="img">
+  <%= image_tag @article.photo.url(:medium), class: "img-rounded" %>
+</div>
+<hr />
+<%= render @article.comments %>
+<%= render 'comments/form' %>

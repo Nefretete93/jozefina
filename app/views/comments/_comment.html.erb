@@ -1,0 +1,8 @@
+<div class="comment-contener">
+ 	<div class="commenter"><%= comment.nick %><span class="date-comment">, <%= comment.created_at.strftime("%d-%m-%Y, %H:%M") %></span></div>
+	 <div class="body-comment"><%= comment.text %></div>
+ 		<% if current_user %>
+  		<%= link_to 'Usuń komentarz', ([@article, comment]), method: :delete, class: "btn btn-warning" %>
+  	<% end %>
+  <br/>
+</div>

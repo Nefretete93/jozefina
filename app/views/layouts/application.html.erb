@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jozefina</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'navigation' %>
+<%= render 'carousel' %>
+
+<div class="col-md-12 whole"></div>
+<div class="container marketing">
+
+  <%= yield %>
+
+  <hr class="featurette-divider">
+  <%= render 'about' %>
+  <hr class="featurette-divider">
+  <%= render 'treatments' %>
+  <hr class="featurette-divider">
+  <%= render 'treatments2' %>
+  <hr class="featurette-divider">
+  <%= render 'pricing' %>
+  <hr class="featurette-divider">
+  <%= render 'pricing2' %>
+  <hr class="featurette-divider">
+  <%= render 'galerie' %>
+  <hr class="featurette-divider">
+  <%= render 'contact' %>
+
+  <%= render 'footer' %>
+</div>
+</body>
+</html>

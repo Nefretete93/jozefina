@@ -1,0 +1,15 @@
+<footer>
+	<div class="row">
+		<div class="col-md-10">
+  		<p>&copy; 2016 Józefina &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+ 		</div>
+ 		<div class="col-md-2">
+ 			<% if current_user %>
+ 				<%= link_to "Wyloguj się", logout_path, method: :delete, class: "btn btn-default" %>
+ 			<% else %>
+  			<%= link_to "Logowanie", login_path, class: "btn btn-default" %>
+  		<% end %>
+ 		</div>
+  </div>
+  	<%= javascript_include_tag 'custom' %>
+</footer>

@@ -1,0 +1,24 @@
+<div id="galerie" class="container-fluid">
+  <div class="col-md-5">
+  <h2 class="featurette-heading">Galerie <span class="text-muted"> Zobacz nasze galerie</span></h2> 
+  <table class="galery">
+    <% Galery.all.each do |galery| %>
+    <% unless galery.photos.empty? %>
+    <tr>
+      <td>
+      <%= link_to galery.name, galery_path(galery) %>
+      </td>
+      <td>
+      <%= galery.created_at.strftime("%d %B, %Y") %>
+      </td>
+      <td>
+      <span class="img img-rounded" >
+        <%= image_tag galery.photos[0].photo.url(:thumb), class: "img-rounded" %>
+      </span>
+      </td>
+      </tr>
+    <% end %>
+    <% end %>
+  </table>
+  </div>
+</div>

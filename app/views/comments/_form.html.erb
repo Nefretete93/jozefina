@@ -1,0 +1,14 @@
+
+<%= form_for([@article, @article.comments.build]) do |f| %>
+<div class="form-group">
+	<%= f.label :nick %>
+	<%= f.text_field :nick, class: "form-control", autofocus: true %>
+</div>
+<div class="form-group">
+	<%= f.label :text %>
+	<%= f.text_area :text, class: "form-control" %>
+</div>
+<div class="form-group">
+	<%= f.submit "Komentuj", class: "form-control btn btn-default" %>
+</div>
+<% end %>

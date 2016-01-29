@@ -1,0 +1,43 @@
+
+<%= form_for @photo, :html => {multipart: true, class: "form-horizontal"} do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation" >
+      <ul>
+        <% @photo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :description, "Opis zdjęcia", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+    <%= f.text_area :description, class: "form-control", autofocus: true  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6 checkbox">
+    <%= hidden_field_tag  "photo[galery_ids][]" %>
+    <% @galeries.each do |galery| %>
+      <div>
+      <%= check_box_tag "photo[galery_ids][]", galery.id, @photo.galery_ids.include?(galery.id), id: dom_id(galery) %>
+      <%= label_tag dom_id(galery), galery.name %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :photo, "Zdjęcie", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+    <%= f.file_field :photo, id: "files", class: "form-control" %>
+    <% unless @photo.new_record? %>
+      <%= image_tag @photo.photo.url(:thumb) %>
+    <% end %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit @photo.new_record? ? 'Utwórz' : 'Aktualizuj', class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

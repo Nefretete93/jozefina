@@ -1,0 +1,9 @@
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= @galery.name %></h2>
+  <% @photos.each do |photo| %>
+    <%= link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:big), data: {lightbox: 'roadtrip'} %>
+  <% end %>
+  <p class="blog-post-meta">Utworzony: <%= @galery.created_at.strftime("%d %B, %Y") %></p>
+</div>
+<div class="img">
+</div>

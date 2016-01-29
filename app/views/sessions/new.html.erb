@@ -1,0 +1,9 @@
+<h1>Logowanie użytkownika</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+	<%= f.label :name, "Imie" %>
+	<%= f.text_field :name, placeholder: "Imie" %>
+	<%= f.label :password, "Hasło" %>
+	<%= f.password_field :password, placeholder: "Hasło" %>
+	<%= f.submit "Zaloguj się", class: "btn btn-submit" %>
+<%end%>

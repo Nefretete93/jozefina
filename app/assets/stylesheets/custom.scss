@@ -1,0 +1,47 @@
+body {
+	position: relative;
+}
+
+.center_slide{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer {
+	border-top: 2px #666 solid;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.whole {
+	padding-top: 50px;
+}
+
+.borderless td, .borderless th {
+	border: none !important;
+}
+
+.small_preview {
+	height: 75px;
+	border: 1px solid  #000;
+	margin: 10px 5px 0 0;
+}
+.comment-contener {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.commenter {
+	color: #4169E1;
+	height: 30px;
+}
+.body-comment {
+	font-style: italic;
+}
+.date-comment {
+	color: #999;
+}
+.galery td{
+  padding-left: 5px;
+  padding-right: 3px;
+  padding-bottom: 10px;
+}
